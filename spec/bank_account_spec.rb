@@ -8,7 +8,7 @@ describe BankAccount do
   end
 
   it 'stores each transaction with the history array' do
-    expect(@acc.account_history).to eq([10])
+    expect(@acc.account_history).to eq(["10, #{BankAccount::TIME}, 10"])
   end
 
   describe 'balance' do
@@ -36,6 +36,5 @@ describe BankAccount do
     end
 
   end
-
 
 end
