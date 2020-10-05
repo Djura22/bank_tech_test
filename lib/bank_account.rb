@@ -2,19 +2,21 @@ class BankAccount
 
   attr_reader :balance, :account_history
 
+  DEFAULT_BALANCE = 0
+
   def initialize
-    @balance = 0
+    @balance = DEFAULT_BALANCE
     @account_history = []
+
   end
 
-  def deposit(amount, date)
+  def deposit(amount)
     @balance += amount
-    @account_history << {date => amount}
+    @account_history << amount
   end
 
-  def withdraw(amount, date)
+  def withdraw(amount)
     @balance -= amount
-    @account_history << {date => -amount}
   end
 
-end  
+end
