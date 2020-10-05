@@ -1,11 +1,11 @@
 require 'bank_account'
 
 describe BankAccount do
-    subject(:acc) { BankAccount.new }
+  subject(:acc) { BankAccount.new }
 
   it 'stores each transaction with the history array' do
     acc.deposit(10)
-    expect(acc.account_history).to eq(["#{BankAccount::TIME}, 10, 10"])
+    expect(acc.account_history).to eq(["#{BankAccount::TIME}, 10, - , 10"])
   end
 
   describe 'balance' do
@@ -38,7 +38,7 @@ describe BankAccount do
 
     it 'when called prints statement of account history' do
       acc.deposit(10)
-      expect(acc.getStatement).to include("#{BankAccount::TIME}, 10, 10")
+      expect(acc.getStatement).to include("#{BankAccount::TIME}, 10, - , 10")
     end
   end
 
@@ -47,7 +47,7 @@ describe BankAccount do
     it 'sorts history array into printable format' do
       acc.deposit(10)
       acc.withdraw(10)
-      expect(acc.compileStatement).to eq("#{BankAccount::TIME}, 10, -, 10\n #{BankAccount::TIME}, -10, -, 0")
+      expect(acc.compileStatement).to eq("#{BankAccount::TIME}, 10, - , 10\n#{BankAccount::TIME}, - , -10, 0\n")
     end  
   end
 

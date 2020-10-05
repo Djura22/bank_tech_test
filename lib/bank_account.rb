@@ -14,18 +14,24 @@ class BankAccount
 
   def deposit(amount)
     @balance += amount
-    @account_history.push("#{TIME}, #{amount}, #{@balance}")
+    @account_history.push("#{TIME}, #{amount}, - , #{@balance}")
   end
 
   def withdraw(amount)
     fail "Insufficient Funds, balance is #{@balance}" if @balance < amount
     @balance -= amount
-    @account_history.push("#{TIME}, #{-amount}, #{@balance}")
+    @account_history.push("#{TIME}, - , #{-amount}, #{@balance}")
   end
 
   def getStatement
-    puts "date || credit || debit || balance"
-    return @account_history
+    puts "date       || credit || debit || balance"
+    return compileStatement
+  end
+
+  def compileStatement
+    statement = []
+    @account_history.each { |t| statement << "#{t}" + "\n"}
+    return statement.join("")
   end
 
 end
