@@ -25,10 +25,16 @@ describe BankAccount do
   end
 
   describe 'withdraw' do
+    
+    it 'raises an error when attempts to withdraw are over balance amount' do
+      expect{ @acc.withdraw(11) }.to raise_error "Insufficient Funds, balance is #{@acc.balance}"
+    end
+
     it 'when called it reduces balance by withdrawal amount' do
       @acc.withdraw(10)
       expect(@acc.balance).to eq(0)
     end
+
   end
 
 
