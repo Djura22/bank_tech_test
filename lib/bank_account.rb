@@ -23,9 +23,9 @@ class BankAccount
     @account_history.push("#{TIME}, #{-amount}, #{@balance}")
   end
 
-  def statement
+  def getStatement
     puts "date || credit || debit || balance"
     return @account_history
-  end  
+  end
 
 end
