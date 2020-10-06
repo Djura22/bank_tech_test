@@ -6,7 +6,6 @@ class BankAccount
 
   def initialize(transact)
     @transact = transact
-
   end
 
   def deposit(amount)
