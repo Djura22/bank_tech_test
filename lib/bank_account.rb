@@ -18,13 +18,13 @@ class BankAccount
   end
 
   def getStatement
-    puts "date       || credit || debit || balance"
-    return compileStatement
-  end
-
-  def compileStatement
-    statement = []
-    
+    puts " date     || credit || debit || balance"
+    transact.transact_history.each do |t|
+      print " #{t[:date]} ||",
+           " #{t[:credit]}  ||",
+           " #{t[:debit]} ||",
+           " #{t[:balance]}\n"
+    end
   end
 
 end

@@ -2,7 +2,6 @@ class Transact
 
   attr_reader :balance, :transact_history
 
-
   DEFAULT_BALANCE = 0
 
   def initialize
@@ -25,7 +24,7 @@ class Transact
     transaction = {
       date: Time.now.strftime('%d/%m/%y'),
       credit: format('%.2f', amount),
-      debit: '---',
+      debit: '-----',
       balance: format('%.2f', @balance)
     }
     @transact_history << transaction
@@ -34,7 +33,7 @@ class Transact
   def confirm_withdrawal(amount)
     transaction = {
       date: Time.now.strftime('%d/%m/%y'),
-      credit: '------',
+      credit: '-----',
       debit: format('%.2f', amount),
       balance: format('%.2f', @balance)
     }

@@ -5,7 +5,7 @@ describe Transact do
 
   it 'stores each transaction with the history array' do
     transaction.deposit(10)
-    expect(transaction.transact_history).to eq([{:date=>"06/10/20", :credit=>"10.00", :debit=>"---", :balance=>"10.00"}])
+    expect(transaction.transact_history).to eq([{:date=>"06/10/20", :credit=>"10.00", :debit=>"-----", :balance=>"10.00"}])
   end
 
   describe 'balance' do
