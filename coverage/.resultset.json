@@ -3,6 +3,8 @@
     "coverage": {
       "/Users/student/Makers/Week-10/bank_tech_test/spec/bank_account_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -10,11 +12,9 @@
           2,
           null,
           1,
-          null,
           1,
           1,
           1,
-          null,
           null,
           null,
           null
@@ -22,15 +22,16 @@
       },
       "/Users/student/Makers/Week-10/bank_tech_test/lib/bank_account.rb": {
         "lines": [
-          1,
+          null,
           null,
           1,
           null,
-          1,
           null,
           1,
           1,
           null,
+          1,
+          1,
           null,
           null,
           1,
@@ -50,12 +51,14 @@
           null,
           null,
           null,
-          null,
           null
         ]
       },
       "/Users/student/Makers/Week-10/bank_tech_test/lib/transact.rb": {
         "lines": [
+          null,
+          null,
+          null,
           1,
           null,
           1,
@@ -103,6 +106,8 @@
       },
       "/Users/student/Makers/Week-10/bank_tech_test/spec/transact_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -127,7 +132,6 @@
           null,
           null,
           1,
-          null,
           1,
           1,
           1,
@@ -138,11 +142,10 @@
           2,
           null,
           null,
-          null,
           null
         ]
       }
     },
-    "timestamp": 1601978861
+    "timestamp": 1601988291
   }
 }

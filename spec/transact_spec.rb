@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'transact'
 
 describe Transact do
@@ -5,7 +7,7 @@ describe Transact do
 
   it 'stores each transaction with the history array' do
     transaction.deposit(10)
-    expect(transaction.transact_history).to eq([{:date=>"06/10/20", :credit=>"10.00", :debit=>"-----", :balance=>"10.00"}])
+    expect(transaction.transact_history).to eq([{ date: '06/10/20', credit: '10.00', debit: '-----', balance: '10.00' }])
   end
 
   describe 'balance' do
@@ -22,7 +24,6 @@ describe Transact do
   end
 
   describe 'withdraw' do
-
     it 'when called it reduces balance by withdrawal amount' do
       transaction.deposit(10)
       transaction.withdraw(10)
@@ -30,8 +31,7 @@ describe Transact do
     end
 
     it 'raises an error when attempts to withdraw are over balance amount' do
-      expect{ transaction.withdraw(12) }.to raise_error "Insufficient Funds, balance is #{transaction.balance}"
+      expect { transaction.withdraw(12) }.to raise_error "Insufficient Funds, balance is #{transaction.balance}"
     end
   end
-  
 end

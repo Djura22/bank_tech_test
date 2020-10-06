@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Transaction Class for handling transaction history
 class Transact
 
   attr_reader :balance, :transact_history
@@ -38,6 +41,6 @@ class Transact
       balance: format('%.2f', @balance)
     }
     @transact_history << transaction
-  end 
+  end
 
-end 
+end

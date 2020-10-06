@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require './lib/transact.rb'
 
+# Bank Account Class
 class BankAccount
-
   attr_reader :transact
 
   def initialize(transact)
@@ -16,14 +18,13 @@ class BankAccount
     transact.withdraw(amount)
   end
 
-  def getStatement
-    puts " date     || credit || debit || balance"
+  def print_statement
+    puts ' date     || credit || debit || balance'
     transact.transact_history.each do |t|
       print " #{t[:date]} ||",
-           " #{t[:credit]}  ||",
-           " #{t[:debit]} ||",
-           " #{t[:balance]}\n"
+            " #{t[:credit]}  ||",
+            " #{t[:debit]} ||",
+            " #{t[:balance]}\n"
     end
   end
-
 end

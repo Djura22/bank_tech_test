@@ -17,6 +17,15 @@ date || credit || debit || balance
 
 #### I will be attempting this in Ruby first today, then again in Javascript if the first goes well.
 
+### Instructions for project setup
+
+$ bundle init
+$ rspec --init
+
+
+To run the tests: $ rspec
+
+
 ### User Stories
 
 ```
@@ -49,3 +58,6 @@ I'd like my bank statement to show all transactions with the date, amount withdr
 and the updated balance. 
 ```
 
+### The Completed Project
+
+![Image 1](https://github.com/Djura22/bank_tech_test/blob/master/bank_app.png?raw=true)
