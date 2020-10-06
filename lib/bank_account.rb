@@ -1,26 +1,20 @@
+require './lib/transact.rb'
+
 class BankAccount
 
-  attr_reader :balance, :account_history
+  attr_reader :transact
 
-  DEFAULT_BALANCE = 0
-  TIME = Time.new
-
-  def initialize
-    @balance = DEFAULT_BALANCE
-    @account_history = []
-    @time = TIME
+  def initialize(transact)
+    @transact = transact
 
   end
 
   def deposit(amount)
-    @balance += amount
-    @account_history.push("#{TIME}, #{amount}, - , #{@balance}")
+    transact.deposit(amount)
   end
 
   def withdraw(amount)
-    fail "Insufficient Funds, balance is #{@balance}" if @balance < amount
-    @balance -= amount
-    @account_history.push("#{TIME}, - , #{-amount}, #{@balance}")
+    transact.withdraw(amount)
   end
 
   def getStatement
@@ -30,8 +24,7 @@ class BankAccount
 
   def compileStatement
     statement = []
-    @account_history.each { |t| statement << "#{t}" + "\n"}
-    return statement.join("")
+    
   end
 
 end
