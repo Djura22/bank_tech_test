@@ -60,4 +60,4 @@ and the updated balance.
 
 ### The Completed Project
 
-![Image 1](https://github.com/Djura22/bank_tech_test/blob/master/bank_app.png?raw=true)
+![Image 1](https://github.com/Djura22/bank_tech_test/blob/master/images/bank_app.png?raw=true)
