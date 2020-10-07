@@ -60,4 +60,4 @@ and the updated balance.
 
 ### The Completed Project
 
-![image 1](./images/bank_app_image.png)
+![image 1](./images/example_usage.png)
