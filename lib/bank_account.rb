@@ -19,7 +19,7 @@ class BankAccount
   end
   
   def print_statement
-    puts ' date     || credit || debit || balance'
+    puts ' date || credit || debit || balance'
     transact.transact_history.reverse_each do |t|
       print " #{t[:date]} ||",
             " #{t[:credit]}  ||",
