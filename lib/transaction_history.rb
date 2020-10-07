@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Transaction Class for handling transaction history
-class Transact
+class TransactionHistory
 
   attr_reader :balance, :transact_history
 
@@ -27,7 +27,7 @@ class Transact
     transaction = {
       date: Time.now.strftime('%d/%m/%y'),
       credit: format('%.2f', amount),
-      debit: '-----',
+      debit: ' ',
       balance: format('%.2f', @balance)
     }
     @transact_history << transaction
@@ -36,7 +36,7 @@ class Transact
   def confirm_withdrawal(amount)
     transaction = {
       date: Time.now.strftime('%d/%m/%y'),
-      credit: '-----',
+      credit: ' ',
       debit: format('%.2f', amount),
       balance: format('%.2f', @balance)
     }

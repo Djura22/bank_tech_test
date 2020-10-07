@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require './lib/transact.rb'
+require './lib/transaction_history.rb'
 
 # Bank Account Class
 class BankAccount
@@ -20,7 +20,7 @@ class BankAccount
 
   def print_statement
     puts ' date     || credit || debit || balance'
-    transact.transact_history.each do |t|
+    transact.transact_history.reverse_each do |t|
       print " #{t[:date]} ||",
             " #{t[:credit]}  ||",
             " #{t[:debit]} ||",

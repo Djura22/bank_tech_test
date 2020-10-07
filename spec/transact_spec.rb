@@ -1,19 +1,19 @@
 # frozen_string_literal: true
 
-require 'transact'
+require 'transaction_history'
 
-describe Transact do
-  subject(:transaction) { Transact.new }
+describe TransactionHistory do
+  subject(:transaction) { TransactionHistory.new }
   time = Time.now.strftime('%d/%m/%y')
 
   it 'stores each transaction with the history array' do
     transaction.deposit(10)
-    expect(transaction.transact_history).to eq([{ date: time, credit: '10.00', debit: '-----', balance: '10.00' }])
+    expect(transaction.transact_history).to eq([{ date: time, credit: '10.00', debit: ' ', balance: '10.00' }])
   end
 
   describe 'balance' do
     it 'returns the balance of the account' do
-      expect(transaction.balance).to eq(Transact::DEFAULT_BALANCE)
+      expect(transaction.balance).to eq(TransactionHistory::DEFAULT_BALANCE)
     end
   end
 
