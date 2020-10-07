@@ -5,14 +5,17 @@ require 'transaction_history'
 
 describe BankAccount do
 
-  let(:transaction) { double("TransactionHistory") }
+  subject(:transaction) { TransactionHistory.new }  
   subject(:acc) { BankAccount.new(transaction) }
+
   time = Time.now.strftime('%d/%m/%y')
 
-  describe 'print_statement' do
-    it 'when called prints statement of account history' do
-      allow(transaction).to receive(:transact_history).and_return([{:date=>time, :credit=>"10.00", :debit=>" ", :balance=>"10.00"}])
-      expect(acc.print_statement).to include(balance: '10.00', credit: '10.00', date: time, debit: ' ')
+  describe 'Full Feature Test' do
+    it 'successfully stores balance, deposits, withdraws, prints statement' do
+      acc.deposit(100)
+      acc.withdraw(50)
+      expect(acc.print_statement).to include(balance: '100.00', credit: '100.00', date: time, debit: ' ')
+      expect(acc.print_statement).to include(balance: '50.00', credit: ' ', date: time, debit: '50.00')
     end
   end
 
