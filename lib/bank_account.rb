@@ -17,7 +17,7 @@ class BankAccount
   def withdraw(amount)
     transact.withdraw(amount)
   end
-
+  
   def print_statement
     puts ' date     || credit || debit || balance'
     transact.transact_history.reverse_each do |t|

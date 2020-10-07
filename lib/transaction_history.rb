@@ -22,6 +22,8 @@ class TransactionHistory
     @balance -= amount
     confirm_withdrawal(amount)
   end
+  
+  private
 
   def confirm_deposit(amount)
     transaction = {
